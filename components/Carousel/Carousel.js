@@ -47,7 +47,7 @@ function CarouselDesign (){
   turntable.src = './assets/carousel/turntable.jpeg';
 
   // CAROUSEL STRETCH
-  leftBtn.textContent = '\u25C2';
+  leftBtn.textContent = '\u25C4';
   rightBtn.textContent = '\u25B8';
 
   let imageArray = [];
