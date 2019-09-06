@@ -57,9 +57,12 @@ function CarouselDesign (){
   imageArray.push(turntable);
   imageArray[0].style.display = "flex";
 
+  
+
 
   rightBtn.addEventListener('click', e => {
-    
+    carousel.classList.toggle('transition')
+
     if (imageArray[0].style.display === "flex"){
       imageArray[1].style.display="flex";
       imageArray[0].style.display="none";
@@ -77,6 +80,28 @@ function CarouselDesign (){
       imageArray[3].style.display="none";
     } 
   })
+
+  leftBtn.addEventListener('click', e => {
+    
+    if (imageArray[0].style.display === "flex"){
+      imageArray[3].style.display="flex";
+      imageArray[0].style.display="none";
+    } 
+     else if (imageArray[1].style.display === "flex"){
+      imageArray[0].style.display="flex";
+      imageArray[1].style.display="none";
+    } 
+    else if (imageArray[2].style.display === "flex"){
+      imageArray[1].style.display="flex";
+      imageArray[2].style.display="none";
+    } 
+    else if (imageArray[3].style.display === "flex"){
+      imageArray[2].style.display="flex";
+      imageArray[3].style.display="none";
+    } 
+  })
+
+
   
 
   return carousel
