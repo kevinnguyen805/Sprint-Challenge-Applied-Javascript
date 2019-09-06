@@ -57,11 +57,9 @@ function CarouselDesign (){
   imageArray.push(turntable);
   imageArray[0].style.display = "flex";
 
-  
 
 
   rightBtn.addEventListener('click', e => {
-    carousel.classList.toggle('transition')
 
     if (imageArray[0].style.display === "flex"){
       imageArray[1].style.display="flex";
