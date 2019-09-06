@@ -17,3 +17,92 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselContainer = document.querySelector('.carousel-container');
+
+function CarouselDesign (){
+
+  const carousel = document.createElement('div');
+  const leftBtn = document.createElement('div');
+  const mountain = document.createElement('img');
+  const computer = document.createElement('img');
+  const trees = document.createElement('img');
+  const turntable = document.createElement('img');
+  const rightBtn = document.createElement('div');
+
+  carousel.appendChild(leftBtn);
+  carousel.appendChild(mountain);
+  carousel.appendChild(computer);
+  carousel.appendChild(trees);
+  carousel.appendChild(turntable);
+  carousel.appendChild(rightBtn);
+
+  carousel.classList.add('carousel');
+  leftBtn.classList.add('left-button');
+  rightBtn.classList.add('right-button');
+
+  mountain.src = './assets/carousel/mountains.jpeg';
+  computer.src = './assets/carousel/computer.jpeg';
+  trees.src = './assets/carousel/trees.jpeg';
+  turntable.src = './assets/carousel/turntable.jpeg';
+
+  // CAROUSEL STRETCH
+  leftBtn.textContent = '\u25C4';
+  rightBtn.textContent = '\u25B8';
+
+  let imageArray = [];
+  imageArray.push(mountain);
+  imageArray.push(computer);
+  imageArray.push(trees);
+  imageArray.push(turntable);
+  imageArray[0].style.display = "flex";
+
+
+
+  rightBtn.addEventListener('click', e => {
+
+    if (imageArray[0].style.display === "flex"){
+      imageArray[1].style.display="flex";
+      imageArray[0].style.display="none";
+    } 
+     else if (imageArray[1].style.display === "flex"){
+      imageArray[2].style.display="flex";
+      imageArray[1].style.display="none";
+    } 
+    else if (imageArray[2].style.display === "flex"){
+      imageArray[3].style.display="flex";
+      imageArray[2].style.display="none";
+    } 
+    else if (imageArray[3].style.display === "flex"){
+      imageArray[0].style.display="flex";
+      imageArray[3].style.display="none";
+    } 
+  })
+
+  leftBtn.addEventListener('click', e => {
+    
+    if (imageArray[0].style.display === "flex"){
+      imageArray[3].style.display="flex";
+      imageArray[0].style.display="none";
+    } 
+     else if (imageArray[1].style.display === "flex"){
+      imageArray[0].style.display="flex";
+      imageArray[1].style.display="none";
+    } 
+    else if (imageArray[2].style.display === "flex"){
+      imageArray[1].style.display="flex";
+      imageArray[2].style.display="none";
+    } 
+    else if (imageArray[3].style.display === "flex"){
+      imageArray[2].style.display="flex";
+      imageArray[3].style.display="none";
+    } 
+  })
+
+
+  
+
+  return carousel
+}
+
+carouselContainer.appendChild(CarouselDesign());
